@@ -12,7 +12,7 @@ function preload(){
   drinkingImg = loadAnimation("drink1.png","drink2.png");
   eatingImg = loadAnimation("eat1.png","eat2.png");
   gymmingImg = loadAnimation("gym1.png","gym2.png","gym11.png","gym12.png");
-  movingImg = loadAnimation("move.png","move1.png");
+  movingImg = loadAnimation("move1.png");
   sleepingImg = loadAnimation("sleep.png");
 }
 function setup() {
@@ -53,18 +53,18 @@ function draw() {
     astronaut.changeAnimation("gymming");
     astronaut.x = 400;
   }
-
-  if(keyPress(mkey)){
-    astronaut.addAnimation("moving",movingImg);
+  if(keyDown("m")){
+    astronaut.addAnimation("moving", movingImg);
     astronaut.changeAnimation("moving");
-    astronaut.x = 400;
+    astronaut.velocityX = 1;
+    astronaut.velocityY = 1;
   }
-
   drawSprites();
 fill("black");
-textSize(30);
-text("instrutions : ");
-textSize(30);
-text("Brushing : Up Arrow ");
+textSize(15);
+text("instrutions : ",80,130);
+textSize(15);
+text("Brushing : Up Arrow ",80,150);
   
 }
+
